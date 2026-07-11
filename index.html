@@ -15,27 +15,28 @@
         .hover-bg-navy:hover { background-color: #153858; }
     </style>
 </head>
-<body class="min-h-screen bg-slate-100 selection:bg-blue-200">
+<body class="min-h-screen bg-slate-50 selection:bg-blue-200 text-slate-800">
 
     <!-- 頂部導航 -->
-    <nav class="bg-white shadow-sm border-b border-slate-200">
+    <nav class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
-                    <div class="bg-navy p-3 rounded-xl text-white">
-                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    <div class="bg-navy p-2 sm:p-3 rounded-xl text-white">
+                        <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-black text-slate-800 tracking-wider">葳葳海鮮 <span class="text-navy">主控台</span></h1>
-                        <p class="text-sm font-medium text-slate-500">Wei Wei Seafood Portal</p>
+                        <h1 class="text-xl sm:text-2xl font-black text-slate-800 tracking-tight">葳葳海鮮 <span class="hidden sm:inline text-navy">主控台</span></h1>
                     </div>
                 </div>
-                <div class="hidden sm:flex items-center space-x-4">
-                    <div class="text-right">
+                
+                <!-- 使用者資訊區 - 在超小螢幕隱藏或精簡 -->
+                <div class="flex items-center space-x-3">
+                    <div class="hidden sm:block text-right">
                         <p class="text-sm font-bold text-slate-700">管理員：吳庭葳</p>
-                        <p class="text-xs text-slate-500" id="current-time"></p>
+                        <p class="text-[10px] sm:text-xs text-slate-500" id="current-time"></p>
                     </div>
-                    <div class="h-10 w-10 rounded-full bg-navy text-white flex items-center justify-center font-bold text-lg border-2 border-slate-200 shadow-sm">
+                    <div class="h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-navy text-white flex items-center justify-center font-bold text-sm border-2 border-slate-200 shadow-sm">
                         葳
                     </div>
                 </div>
@@ -44,99 +45,72 @@
     </nav>
 
     <!-- 主要內容區 -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
         
-        <div class="mb-10">
-            <h2 class="text-2xl font-bold text-slate-800 mb-2">歡迎回來，準備好開始今天的營運了嗎？</h2>
-            <p class="text-slate-500 font-medium">請選擇您要操作的子系統。所有系統皆獨立運行，確保最高穩定性。</p>
+        <div class="mb-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-800 mb-2">營運主控台</h2>
+            <p class="text-sm sm:text-base text-slate-500 font-medium">請選擇您要操作的子系統。</p>
         </div>
 
         <!-- 核心系統區塊 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             
             <!-- 訂單系統卡片 -->
-            <a href="https://jun101262000.github.io/Order/" target="_blank" class="group relative bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden block">
-                <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-emerald-50 opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            <a href="https://jun101262000.github.io/Order/" target="_blank" class="group relative bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-lg transition-all duration-300 block">
+                <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-emerald-50 opacity-50 group-hover:scale-110 transition-transform"></div>
                 <div class="relative z-10">
-                    <div class="bg-emerald-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-md text-2xl">
+                    <div class="bg-emerald-500 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-5 shadow-md text-xl">
                         <i class="fa-solid fa-store"></i>
                     </div>
-                    <h3 class="text-2xl font-black text-slate-800 mb-3 group-hover:text-emerald-600 transition-colors">
-                        訂單管理系統
-                    </h3>
-                    <p class="text-slate-500 font-medium leading-relaxed mb-8 h-12">
-                        處理客戶下單、產生熱感應收據、計算運費與折讓。
-                    </p>
-                    <div class="flex items-center text-sm font-bold text-slate-600">
-                        <span class="px-4 py-2 rounded-lg text-white bg-emerald-500 group-hover:bg-emerald-600 transition-colors flex items-center shadow-sm">
-                            進入系統 <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
-                        </span>
-                    </div>
+                    <h3 class="text-xl font-black text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">訂單管理系統</h3>
+                    <p class="text-slate-500 text-sm sm:text-base leading-relaxed mb-6">處理客戶下單、收據產生與運費計算。</p>
+                    <span class="inline-block px-4 py-2 rounded-lg text-white bg-emerald-500 group-hover:bg-emerald-600 transition-colors text-sm font-bold">
+                        進入系統 <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </span>
                 </div>
             </a>
 
             <!-- 庫存系統卡片 -->
-            <a href="https://jun101262000.github.io/inventory/" target="_blank" class="group relative bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden block">
-                <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-blue-50 opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+            <a href="https://jun101262000.github.io/inventory/" target="_blank" class="group relative bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-lg transition-all duration-300 block">
+                <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-blue-50 opacity-50 group-hover:scale-110 transition-transform"></div>
                 <div class="relative z-10">
-                    <div class="bg-navy text-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-md text-2xl">
+                    <div class="bg-navy text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-5 shadow-md text-xl">
                         <i class="fa-solid fa-boxes-stacked"></i>
                     </div>
-                    <h3 class="text-2xl font-black text-slate-800 mb-3 group-hover:text-blue-700 transition-colors">
-                        庫存與進銷存系統
-                    </h3>
-                    <p class="text-slate-500 font-medium leading-relaxed mb-8 h-12">
-                        管理海鮮庫存、多規格單價、進出貨作業與營收結算。
-                    </p>
-                    <div class="flex items-center text-sm font-bold text-slate-600">
-                        <span class="px-4 py-2 rounded-lg text-white bg-navy hover-bg-navy transition-colors flex items-center shadow-sm">
-                            進入系統 <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
-                        </span>
-                    </div>
+                    <h3 class="text-xl font-black text-slate-800 mb-2 group-hover:text-blue-700 transition-colors">庫存進銷存系統</h3>
+                    <p class="text-slate-500 text-sm sm:text-base leading-relaxed mb-6">管理庫存、規格設定與營收結算作業。</p>
+                    <span class="inline-block px-4 py-2 rounded-lg text-white bg-navy hover-bg-navy transition-colors text-sm font-bold">
+                        進入系統 <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </span>
                 </div>
             </a>
-
         </div>
 
-        <!-- 其他擴充工具區塊 -->
-        <h3 class="text-lg font-bold text-slate-700 mb-4">擴充模組與設定 (研發中)</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="bg-white/60 p-6 rounded-2xl border border-slate-200 flex items-center justify-between opacity-70">
-                <div class="flex items-center space-x-4">
-                    <div class="p-3 bg-slate-200 rounded-xl text-slate-600">
-                        <i class="fa-solid fa-chart-line text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-700">營收數據中心</h4>
+        <!-- 擴充區塊 -->
+        <h3 class="text-md font-bold text-slate-700 mb-4">研發中模組</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-slate-100 rounded-lg text-slate-500"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4 class="font-bold text-slate-600 text-sm">營收中心</h4>
                 </div>
-                <span class="text-xs font-bold px-2 py-1 bg-slate-200 text-slate-600 rounded-md">即將推出</span>
+                <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 text-slate-400 rounded">待開發</span>
             </div>
-            <div class="bg-white/60 p-6 rounded-2xl border border-slate-200 flex items-center justify-between opacity-70">
-                <div class="flex items-center space-x-4">
-                    <div class="p-3 bg-slate-200 rounded-xl text-slate-600">
-                        <i class="fa-solid fa-users text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-700">熟客名單管理</h4>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-slate-100 rounded-lg text-slate-500"><i class="fa-solid fa-users"></i></div>
+                    <h4 class="font-bold text-slate-600 text-sm">熟客管理</h4>
                 </div>
-                <span class="text-xs font-bold px-2 py-1 bg-slate-200 text-slate-600 rounded-md">開發中</span>
-            </div>
-            <div class="bg-white/60 p-6 rounded-2xl border border-slate-200 flex items-center justify-between opacity-70">
-                <div class="flex items-center space-x-4">
-                    <div class="p-3 bg-slate-200 rounded-xl text-slate-600">
-                        <i class="fa-solid fa-gear text-lg"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-700">系統全域設定</h4>
-                </div>
-                <span class="text-xs font-bold px-2 py-1 bg-slate-200 text-slate-600 rounded-md">管理員</span>
+                <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 text-slate-400 rounded">待開發</span>
             </div>
         </div>
     </main>
 
     <script>
-        // 設定當前時間
         function updateTime() {
             const now = new Date();
             const timeString = now.toLocaleString('zh-TW', {
-                year: 'numeric', month: 'long', day: 'numeric', 
+                year: 'numeric', month: 'short', day: 'numeric', 
                 hour: '2-digit', minute: '2-digit'
             });
             document.getElementById('current-time').innerText = timeString;
@@ -146,5 +120,4 @@
     </script>
 </body>
 </html>
-
 
